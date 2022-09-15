@@ -4,19 +4,27 @@ import face_recognition
 import os
 from datetime import datetime
 
-
+###1. we will extract the name from the name of the file and create a list:
 path = 'images'
+#1.1create a list named as 'images' which has path
 images = []
+#1.2-create a list named as 'personName' which will store all names
 personNames = []
+#1.3-list all components of current directory
 myList = os.listdir(path)
 print(myList)
+##1.4-Split name from file_name (Use cv2):
 for cu_img in myList:
+    #1.4.1-Read all images in 'current_Img'
     current_Img = cv2.imread(f'{path}/{cu_img}')
+    #1.4.2-Store the images in 'images' list-->(images = [])
     images.append(current_Img)
+    #1.4.3-Add this list to 'personNames' list-->(personNames = []) when spliting file_name
+    # and getting person's name from it->(splitting it into component 0 & 1 and getting 0th component)
     personNames.append(os.path.splitext(cu_img)[0])
 print(personNames)
 
-
+#wedkjfdcbsdrujcsdvcdfbv
 def faceEncodings(images):
     encodeList = []
     for img in images:
@@ -43,7 +51,7 @@ def attendance(name):
 encodeListKnown = faceEncodings(images)
 print('All Encodings Complete!!!')
 
-cap = cv2.VideoCapture(1)
+cap = cv2.VideoCapture(0)
 
 while True:
     ret, frame = cap.read()
