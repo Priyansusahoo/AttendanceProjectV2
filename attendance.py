@@ -12,7 +12,7 @@ images = []
 personNames = []
 #1.3-list all components of current directory
 myList = os.listdir(path)
-print(myList)
+# print(myList)
 ##1.4-Split name from file_name (Use cv2):
 for cu_img in myList:
     #1.4.1-Read all images in 'current_Img'
@@ -22,9 +22,9 @@ for cu_img in myList:
     #1.4.3-Add this list to 'personNames' list-->(personNames = []) when spliting file_name
     # and getting person's name from it->(splitting it into component 0 & 1 and getting 0th component)
     personNames.append(os.path.splitext(cu_img)[0])
-print(personNames)
+# print(personNames)
 
-#wedkjfdcbsdrujcsdvcdfbv
+
 def faceEncodings(images):
     encodeList = []
     for img in images:
